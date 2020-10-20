@@ -57,3 +57,5 @@
     conversation.messages.where(m => m.content.Contains(this.keywordfilter))
 ```
 
+## Singletons ... 
+* conversationReader, logWriter, conversationEditor, Configs, (all but coversation, messages, activity)
