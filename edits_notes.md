@@ -35,4 +35,21 @@
 * As there is no intention to make a parent Filter instance ever
 ### seperate file for each of the children would fit C# convention better
 
+### Language Integrated Query for filters...? 
+Alternative code
+``` 
+  var editedMessages = new List<Message>();
+    foreach(Message message in conversation.messages)
+    {
+        if (message.content.Contains(this.keywordfilter))
+        {
+            editedMessages.Add(message);
+        }
+    };
+    conversation.messages = editedMessages;
+
+  conversation.messages = from message in conversation
+                          where message.content.Contains(this.keywordfilter)
+                          select message
+```
 
