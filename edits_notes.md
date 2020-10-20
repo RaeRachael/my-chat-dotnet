@@ -36,7 +36,8 @@
 ### seperate file for each of the children would fit C# convention better
 
 ### Language Integrated Query for filters...? 
-Alternative code
+* Alternative code, also saves making a new varible long term.
+
 ``` 
   var editedMessages = new List<Message>();
     foreach(Message message in conversation.messages)
@@ -51,5 +52,8 @@ Alternative code
   conversation.messages = from message in conversation
                           where message.content.Contains(this.keywordfilter)
                           select message
+
+  conversation.messages =
+    conversation.messages.where(m => m.content.Contains(this.keywordfilter))
 ```
 
